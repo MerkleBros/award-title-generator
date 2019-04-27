@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drumroll...</title>
+
+    <script type="text/javascript">
+
+      var categories = [
+        "belt-shaped drilling_pipe",
+        "ducal blackfoot_daisy",
+        "acervate Parry's_pinyo",
+        "unbrainwashed stamp_collectio",
+        "sublimate undercharg",
+        "shifting primary_censorshi",
+        "subterranean raindro",
+        "deep conferre",
+        "pale ski",
+        "bulbar saddlebac",
+        "unstoppered firewal",
+        "winglike Vel",
+        "ascendant kaur",
+        "frantic genus_Ory",
+        "windup schnapp",
+        "cross-banded petitio_principi",
+        "ill-bred brimston",
+        "minor cream_pitche",
+        "thenal fette",
+        "disputed warlor",
+        "regulation fanligh",
+        "implemental visual_spac",
+        "void acidic_hydroge",
+        "spinal pacemake",
+        "pent juvenile_bod",
+        "color-blind rat-a-tat-ta",
+        "deep-sea lof",
+        "monumental tributyri",
+        "jerkwater Lis",
+        "bloodguilty Florentine_iri",
+        "disparate sloo",
+        "sheathed acidophilus_mil",
+        "protrusive servan",
+        "noiseless dialogu",
+        "mated misus",
+        "lightproof Little_Offic",
+        "caring sequence",
+        "consequential pric",
+        "nonabsorbent West_Berline",
+        "fastidious string_sectio",
+        "wet sacrilegiousnes",
+        "biogenetic housing_estat",
+        "asterismal sunfis",
+        "blown-up agap",
+        "detachable fishing_seaso",
+        "apoplectic Boot",
+        "embattled storyboo",
+        "unexpired Lepu",
+        "homeless marital_relationshi",
+        "unrequested common_sunflowe",
+        "micro demagnetizatio",
+        "fizzing II_Chronicle",
+        "unseeded sergeant_at_arm",
+        "greater Fo",
+        "exigent bridoo",
+        "orchestrated tree_hous",
+        "live object_recognitio",
+        "fusible Areopagu",
+        "open Colchicu",
+        "defined quar",
+        "woven Faroe_Island",
+        "catechistic virilis",
+        "pastel conservator-ward_relatio",
+        "annual Nev",
+        "orthopedic Leptodactylida",
+        "plantar thalamostriate_vei",
+        "alcohol-soluble Lashkar-e-Jhangv",
+        "ribbed mortgage",
+        "solid self-registering_thermomete",
+        "rustproof calliopsi",
+        "matched Euphrosyn",
+        "shipboard kniphofi",
+        "calcic reversio",
+        "beady Kamchatka_Peninsul",
+        "mundane immaterialit",
+        "Roman coyot",
+        "aromatic coac",
+        "fourteen Ne",
+        "indiscrete pas",
+        "impatient Greenback_Part",
+        "babelike spicebus",
+        "unplowed Japanese_beetl",
+        "superficial fishbon",
+        "porose flago",
+        "actinomycetal inclinatio",
+        "isotonic Willar",
+        "passant metalli",
+        "unsound pen-and-in",
+        "familiar World_Cu",
+        "Britannic Naj",
+        "armored perennial_ryegras",
+        "ectomorphic doeski",
+        "deceptive wave_numbe",
+        "amenable dea",
+        "long-distance fluorochrom",
+        "well-groomed obviousnes",
+        "exaugural frangipan",
+        "low-cut Chateaubrian",
+        "downward-arching Anguill",
+        "passionless deadbeat_da",
+      ]
+
+      const intervals = [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        200,
+        200,
+        200,
+        200,
+        400,
+        200,
+        200,
+        200,
+        200,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        800,
+        800,
+        800,
+        800,
+        1600,
+      ]
+
+      var recipients = [
+        "Kiwako",
+        "Austin",
+        "Patrick"
+      ]
+
+      function randomElementFrom(arr){
+        return arr[Math.floor(Math.random() * arr.length)]
+      }
+
+      function print(str,id){
+        document.getElementById(id).innerHTML = str
+      }
+
+      function wait (interval) {
+        return new Promise(rslv => setTimeout(rslv, interval));
+      }
+
+      function waitThenPrint(intervals){
+        if (intervals.length === 0) {
+          return wait(1600)
+            .then(() => print(randomElementFrom(recipients), "recipient"))
+        } else {
+          return wait(intervals[0])
+            .then(() => print(randomElementFrom(categories), "category"))
+            .then(() => waitThenPrint(intervals.slice(1)))
+        }
+      }
+
+      waitThenPrint(intervals)
+    </script>
+
+    <style>
+      body {
+          text-align: center;
+          margin-top: 30%;
+          font-size: x-large;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      The award for...
+    </div>
+    <div id="category"></div>
+    <div>
+      Goes to....
+    </div>
+    <div id="recipient"></div>
+  </body>
+
+</html>
