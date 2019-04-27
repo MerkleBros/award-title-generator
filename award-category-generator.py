@@ -12,5 +12,11 @@ def award_category():
     awardy_descripty = random.choice(adjectives)
     return awardy_descripty+" "+awardy_namey
 
-for i in range(100):
-    print(award_category())
+
+if __name__ == "__main__":
+    with open("award_namez.txt","w") as file:
+        for i in range(100):
+            file.write(award_category()+"\n")
+
+    
+    

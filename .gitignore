@@ -3,3 +3,7 @@ include
 lib
 lib64
 share
+images
+Images*
+*.cfg
+award_namez.txt
