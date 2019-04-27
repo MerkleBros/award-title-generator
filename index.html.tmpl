@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Drumroll...</title>
+
+    <script type="text/javascript">
+
+      var categories = [
+        %REPLACE_ME%
+      ]
+
+      const intervals = [
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        50,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        100,
+        200,
+        200,
+        200,
+        200,
+        400,
+        200,
+        200,
+        200,
+        200,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        400,
+        800,
+        800,
+        800,
+        800,
+        1600,
+      ]
+
+      var recipients = [
+        "Kiwako",
+        "Austin",
+        "Patrick"
+      ]
+
+      function randomElementFrom(arr){
+        return arr[Math.floor(Math.random() * arr.length)]
+      }
+
+      function print(str,id){
+        document.getElementById(id).innerHTML = str
+      }
+
+      function wait (interval) {
+        return new Promise(rslv => setTimeout(rslv, interval));
+      }
+
+      function waitThenPrint(intervals){
+        if (intervals.length === 0) {
+          return wait(1600)
+            .then(() => print(randomElementFrom(recipients), "recipient"))
+        } else {
+          return wait(intervals[0])
+            .then(() => print(randomElementFrom(categories), "category"))
+            .then(() => waitThenPrint(intervals.slice(1)))
+        }
+      }
+
+      waitThenPrint(intervals)
+    </script>
+
+    <style>
+      body {
+          text-align: center;
+          margin-top: 30%;
+          font-size: x-large;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div>
+      The award for...
+    </div>
+    <div id="category"></div>
+    <div>
+      Goes to....
+    </div>
+    <div id="recipient"></div>
+  </body>
+
+</html>
