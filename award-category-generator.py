@@ -1,3 +1,4 @@
+import json
 import nltk
 from nltk.corpus import wordnet as wn
 
@@ -14,9 +15,5 @@ def award_category():
 
 
 if __name__ == "__main__":
-    with open("award_namez.txt","w") as file:
-        for i in range(100):
-            file.write(award_category()+"\n")
-
-    
-    
+	with open("award_names.json","w") as file:
+		json.dump([award_category() for i in range(100)], file)
