@@ -3,6 +3,7 @@
   <head>
     <title>Drumroll...</title>
 
+    <link rel="stylesheet" href="main.css">
     <script type="text/javascript">
 
     // TODO: non-hardcoded recipients list
@@ -258,7 +259,7 @@
       function waitThenPrint(intervals, recipient){
         if (intervals.length === 0) {
           return wait(1600)
-            .then(() => print(recipient, "recipient")) 
+            .then(() => print("🍔 "+recipient+" 🍔", "recipient")) 
         } else {
           return wait(intervals[0])
             .then(() => print(randomElementFrom(magnitude)+randomElementFrom(categories), "category"))
@@ -268,7 +269,8 @@
 
       function drawAward(){
         if (recipients.length === 0) {
-            document.body.innerHTML = "🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔"
+            document.body.style.color = "pink"
+            document.body.innerHTML = "🍔🍔🍔🍔S🍔🍔O🍔🍔🍔🍔🍔🍔🍔U🍔T🍔🍔🍔H🍔🍔🍔🍔b🍔🍔🍔🍔🍔🍔y🍔🍔🍔🍔🍔🍔S🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔O🍔U🍔🍔T🍔🍔🍔🍔🍔H🍔🍔🍔🍔2019🍔🍔🍔🍔🍔🍔🍔🍔"
             return
         }
         let recipient = recipients.pop()
@@ -283,18 +285,11 @@
       
       
     </script>
-
-    <style>
-      body {
-          text-align: center;
-          margin-top: 20%;
-          font-size: 100px;
-      }
-    </style>
   </head>
 
   <body>
     <div>
+      🍔🍔🍔🍔🍔🍔🍔🍔🍔 <br>
       The award for
     </div>
     <div id="category"></div>

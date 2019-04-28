@@ -1,0 +1,38 @@
+@font-face {
+    font-family: Scoreboard;
+    src: url(scoreboard.ttf) format("truetype");
+}
+
+body {
+  text-align: center;
+  /*margin-top: 10%;*/
+  font-size: 110px;
+  font-family: Scoreboard;
+  color: rgb(41, 255, 61);
+  text-shadow: 0 0 5px rgb(41, 255, 61);
+  font-weight: bold;
+  margin: 0;
+  padding: 0;
+  background-color: black;
+  background-size:     cover;                      /* <------ */
+  background-repeat:   no-repeat;
+  background-position: center center;              /* optional, center the image */
+}
+
+#background {
+    position: absolute;
+    z-index: -1;
+    min-height: 100%;
+    width: 100%
+}
+
+#category {
+  color: rgb(196, 41, 255); 
+  text-shadow: 0 0 5px rgb(196, 41, 255);
+}
+
+#recipient {
+  color: rgb(255,147,41); 
+  text-shadow: 0 0 5px rgb(255,147,41);
+  font-size: 170px;
+}
