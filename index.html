@@ -5,175 +5,246 @@
 
     <script type="text/javascript">
 
-      var categories = [
-        "belt-shaped drilling_pipe",
-        "ducal blackfoot_daisy",
-        "acervate Parry's_pinyo",
-        "unbrainwashed stamp_collectio",
-        "sublimate undercharg",
-        "shifting primary_censorshi",
-        "subterranean raindro",
-        "deep conferre",
-        "pale ski",
-        "bulbar saddlebac",
-        "unstoppered firewal",
-        "winglike Vel",
-        "ascendant kaur",
-        "frantic genus_Ory",
-        "windup schnapp",
-        "cross-banded petitio_principi",
-        "ill-bred brimston",
-        "minor cream_pitche",
-        "thenal fette",
-        "disputed warlor",
-        "regulation fanligh",
-        "implemental visual_spac",
-        "void acidic_hydroge",
-        "spinal pacemake",
-        "pent juvenile_bod",
-        "color-blind rat-a-tat-ta",
-        "deep-sea lof",
-        "monumental tributyri",
-        "jerkwater Lis",
-        "bloodguilty Florentine_iri",
-        "disparate sloo",
-        "sheathed acidophilus_mil",
-        "protrusive servan",
-        "noiseless dialogu",
-        "mated misus",
-        "lightproof Little_Offic",
-        "caring sequence",
-        "consequential pric",
-        "nonabsorbent West_Berline",
-        "fastidious string_sectio",
-        "wet sacrilegiousnes",
-        "biogenetic housing_estat",
-        "asterismal sunfis",
-        "blown-up agap",
-        "detachable fishing_seaso",
-        "apoplectic Boot",
-        "embattled storyboo",
-        "unexpired Lepu",
-        "homeless marital_relationshi",
-        "unrequested common_sunflowe",
-        "micro demagnetizatio",
-        "fizzing II_Chronicle",
-        "unseeded sergeant_at_arm",
-        "greater Fo",
-        "exigent bridoo",
-        "orchestrated tree_hous",
-        "live object_recognitio",
-        "fusible Areopagu",
-        "open Colchicu",
-        "defined quar",
-        "woven Faroe_Island",
-        "catechistic virilis",
-        "pastel conservator-ward_relatio",
-        "annual Nev",
-        "orthopedic Leptodactylida",
-        "plantar thalamostriate_vei",
-        "alcohol-soluble Lashkar-e-Jhangv",
-        "ribbed mortgage",
-        "solid self-registering_thermomete",
-        "rustproof calliopsi",
-        "matched Euphrosyn",
-        "shipboard kniphofi",
-        "calcic reversio",
-        "beady Kamchatka_Peninsul",
-        "mundane immaterialit",
-        "Roman coyot",
-        "aromatic coac",
-        "fourteen Ne",
-        "indiscrete pas",
-        "impatient Greenback_Part",
-        "babelike spicebus",
-        "unplowed Japanese_beetl",
-        "superficial fishbon",
-        "porose flago",
-        "actinomycetal inclinatio",
-        "isotonic Willar",
-        "passant metalli",
-        "unsound pen-and-in",
-        "familiar World_Cu",
-        "Britannic Naj",
-        "armored perennial_ryegras",
-        "ectomorphic doeski",
-        "deceptive wave_numbe",
-        "amenable dea",
-        "long-distance fluorochrom",
-        "well-groomed obviousnes",
-        "exaugural frangipan",
-        "low-cut Chateaubrian",
-        "downward-arching Anguill",
-        "passionless deadbeat_da",
-      ]
-
-      const intervals = [
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        50,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        100,
-        200,
-        200,
-        200,
-        200,
-        400,
-        200,
-        200,
-        200,
-        200,
-        400,
-        400,
-        400,
-        400,
-        400,
-        400,
-        400,
-        400,
-        800,
-        800,
-        800,
-        800,
-        1600,
-      ]
-
+    // TODO: non-hardcoded recipients list
       var recipients = [
-        "Kiwako",
-        "Austin",
-        "Patrick"
+        "Alice",
+        "Bob",
+        "Craig",
+        "Dan",
+        "Eve",
       ]
+
+      var magnitude = [
+        "Most ",
+        "Least ",
+        "Best ",
+        "Worst ",
+      ]
+
+    // TODO: Read the categories from award_names.txt instead of hardcoding
+      var categories = [
+      "belt-shaped drilling pipe",
+      "ducal blackfoot daisy",
+      "acervate Parry's pinyon",
+      "unbrainwashed stamp collection",
+      "sublimate undercharge",
+      "shifting primary censorship",
+      "subterranean raindrop",
+      "deep conferrer",
+      "pale skim",
+      "bulbar saddleback",
+      "unstoppered firewall",
+      "winglike Vela",
+      "ascendant kauri",
+      "frantic genus Oryx",
+      "windup schnapps",
+      "cross-banded petitio principii",
+      "ill-bred brimstone",
+      "minor cream pitcher",
+      "thenal fetter",
+      "disputed warlord",
+      "regulation fanlight",
+      "implemental visual space",
+      "void acidic hydrogen",
+      "spinal pacemaker",
+      "pent juvenile body",
+      "color-blind rat-a-tat-tat",
+      "deep-sea loft",
+      "monumental tributyrin",
+      "jerkwater Lisu",
+      "bloodguilty Florentine iris",
+      "disparate sloop",
+      "sheathed acidophilus milk",
+      "protrusive servant",
+      "noiseless dialogue",
+      "mated misuse",
+      "lightproof Little Office",
+      "caring sequencer",
+      "consequential price",
+      "nonabsorbent West Berliner",
+      "fastidious string section",
+      "wet sacrilegiousness",
+      "biogenetic housing estate",
+      "asterismal sunfish",
+      "blown-up agape",
+      "detachable fishing season",
+      "apoplectic Booth",
+      "embattled storybook",
+      "unexpired Lepus",
+      "homeless marital relationship",
+      "unrequested common sunflower",
+      "micro demagnetization",
+      "fizzing II Chronicles",
+      "unseeded sergeant at arms",
+      "greater Fox",
+      "exigent bridoon",
+      "orchestrated tree house",
+      "live object recognition",
+      "fusible Areopagus",
+      "open Colchicum",
+      "defined quart",
+      "woven Faroe Islands",
+      "catechistic virilism",
+      "pastel conservator-ward relation",
+      "annual Neva",
+      "orthopedic Leptodactylidae",
+      "plantar thalamostriate vein",
+      "alcohol-soluble Lashkar-e-Jhangvi",
+      "ribbed mortgagee",
+      "solid self-registering thermometer",
+      "rustproof calliopsis",
+      "matched Euphrosyne",
+      "shipboard kniphofia",
+      "calcic reversion",
+      "beady Kamchatka Peninsula",
+      "mundane immateriality",
+      "Roman coyote",
+      "aromatic coach",
+      "fourteen Ney",
+      "indiscrete past",
+      "impatient Greenback Party",
+      "babelike spicebush",
+      "unplowed Japanese beetle",
+      "superficial fishbone",
+      "porose flagon",
+      "actinomycetal inclination",
+      "isotonic Willard",
+      "passant metallic",
+      "unsound pen-and-ink",
+      "familiar World Cup",
+      "Britannic Naja",
+      "armored perennial ryegrass",
+      "ectomorphic doeskin",
+      "deceptive wave number",
+      "amenable deal",
+      "long-distance fluorochrome",
+      "well-groomed obviousness",
+      "exaugural frangipane",
+      "low-cut Chateaubriand",
+      "downward-arching Anguilla",
+      "passionless deadbeat dad",
+      "even continental shelf",
+      "appreciable patrimony",
+      "ungracious Helenium",
+      "cybernetic mumps",
+      "well-knit folly",
+      "deadened downfall",
+      "unvulcanized armchair",
+      "superfine insufflation",
+      "literary American Federation of Labor",
+      "capitalistic suspension",
+      "thematic bosk",
+      "pristine envelope",
+      "smoke-filled Edward the Confessor",
+      "Mycenaean angiology",
+      "ninety chariot",
+      "cross-eyed stringer",
+      "beaklike scintilla",
+      "Mozartian Livermore",
+      "discreditable personal expense",
+      "despoiled time scale",
+      "s-shaped nihil",
+      "authorized spindle tree",
+      "moneyless safety net",
+      "bronze Reiter's syndrome",
+      "syncategorematic cabal",
+      "mesolithic Hercules",
+      "tinpot pyrophyllite",
+      "unloaded liftoff",
+      "leery epicenter",
+      "unstructured freeloader",
+      "nebular secretariat",
+      "forced infection",
+      "prescription steel production",
+      "trophoblastic parley",
+      "free Tulu",
+      "humanist systole",
+      "unlovable bing cherry",
+      "shut impaction",
+      "experimental old country",
+      "Chadian protriptyline",
+      "inefficacious siding",
+      "palmate genus Arum",
+      "autofluorescent exploration",
+      "eccrine hotfoot",
+      "shrewish connivance",
+      "machine readable bray",
+      "at the ready grater",
+      "long-winded karate",
+      "indomitable charger",
+      "curious serrated wrack",
+      "exploratory floor",
+      "vicarious Cypraeidae",
+      "twenty-first ground beetle",
+      "must large",
+      "anti-American Lota",
+      "proto pin-tailed sandgrouse",
+      "wry Cantabrian Mountains",
+      "younger lector",
+      "corymbose rag paper",
+      "licentious nasal septum",
+      "infinite glans penis",
+      "syrupy ocean sunfish",
+      "Latin-American archine",
+      "big mole cricket",
+      "cozy inside track",
+      "aqueous salmonellosis",
+      "peripheral heat-seeking missile",
+      "bivariate lower deck",
+      "finished beryllium bronze",
+      "unifacial Wilson's warbler",
+      "acidimetric Wernicke's area",
+      "least hard rubber",
+      "heavenly harvest",
+      "homogenized picador",
+      "distant little brother",
+      "plane-polarized Canadian",
+      "echoing magpie",
+      "gory singular",
+      "humane ootid",
+      "migratory Acroclinium",
+      "gradational senna",
+      "auxetic fancy goods",
+      "vitreous Welsh onion",
+      "upcurved rhagades",
+      "longstanding pomegranate",
+      "natural trio",
+      "social verbalization",
+      "unmanly genetic map",
+      "disciplined Gastrophryne",
+      "personal Dean",
+      "silty hairsplitting",
+      "impalpable mendacity",
+      "shared Astor",
+      "clinical exceedance",
+      "air-breathing creatine",
+      "clunky forefather",
+      "borderline salaam",
+      "scholastic bar line",
+      "Sudanese Ondatra",
+      "baric phase",
+      ]
+
+      const intervals = new Array(50)
+      intervals.fill(50, 0, 20)
+      intervals.fill(100, 20, 30)
+      intervals.fill(200, 30, 38)
+      intervals.fill(400, 38, 45)
+      intervals.fill(800, 45, 49)
+      intervals.fill(1600, 49, 50)
+
 
       function randomElementFrom(arr){
         return arr[Math.floor(Math.random() * arr.length)]
+      }
+
+      function shuffleArray(array) {
+          for (var i = array.length - 1; i > 0; i--) {
+              var j = Math.floor(Math.random() * (i + 1));
+              var temp = array[i];
+              array[i] = array[j];
+              array[j] = temp;
+          }
       }
 
       function print(str,id){
@@ -184,32 +255,47 @@
         return new Promise(rslv => setTimeout(rslv, interval));
       }
 
-      function waitThenPrint(intervals){
+      function waitThenPrint(intervals, recipient){
         if (intervals.length === 0) {
           return wait(1600)
-            .then(() => print(randomElementFrom(recipients), "recipient"))
+            .then(() => print(recipient, "recipient")) 
         } else {
           return wait(intervals[0])
-            .then(() => print(randomElementFrom(categories), "category"))
-            .then(() => waitThenPrint(intervals.slice(1)))
+            .then(() => print(randomElementFrom(magnitude)+randomElementFrom(categories), "category"))
+            .then(() => waitThenPrint(intervals.slice(1), recipient))
         }
       }
 
-      waitThenPrint(intervals)
+      function drawAward(){
+        if (recipients.length === 0) {
+            document.body.innerHTML = "🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔🍔"
+            return
+        }
+        let recipient = recipients.pop()
+        print("", "recipient")
+        waitThenPrint(intervals, recipient)       
+      }
+
+      shuffleArray(recipients)
+      window.onload = function() {
+        document.body.onclick = drawAward
+      }
+      
+      
     </script>
 
     <style>
       body {
           text-align: center;
-          margin-top: 30%;
-          font-size: x-large;
+          margin-top: 20%;
+          font-size: 100px;
       }
     </style>
   </head>
 
   <body>
     <div>
-      The award for...
+      The award for
     </div>
     <div id="category"></div>
     <div>
